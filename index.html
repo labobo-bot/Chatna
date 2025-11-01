@@ -1,12 +1,80 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>شاتنا</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شاتنا - تطبيق الدردشة العربي</title>
+    <meta name="description" content="تطبيق شاتنا للدردشة والتعارف بين المستخدمين من مختلف الدول العربية">
+    <meta name="keywords" content="دردشة عربية, تعارف, غرف دردشة, شات عربي">
+    <meta property="og:title" content="شاتنا - تطبيق الدردشة العربي">
+    <meta property="og:description" content="تطبيق شاتنا للدردشة والتعارف بين المستخدمين من مختلف الدول العربية">
+    <meta name="twitter:title" content="شاتنا - تطبيق الدردشة العربي">
+    <meta name="twitter:description" content="تطبيق شاتنا للدردشة والتعارف بين المستخدمين من مختلف الدول العربية">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #f59e0b;
+            --background-color: #f8fafc;
+            --surface-color: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+        }
+    }
+
+    @layer base {
+        body {
+            font-family: 'Cairo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-primary);
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            @apply bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200;
+        }
+        
+        .btn-secondary {
+            @apply bg-[var(--secondary-color)] text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all duration-200;
+        }
+        
+        .card {
+            @apply bg-[var(--surface-color)] rounded-xl shadow-md p-6 border border-[var(--border-color)];
+        }
+        
+        .input-field {
+            @apply w-full px-4 py-3 rounded-lg border border-[var(--border-color)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] transition-all;
+        }
+    }
+
+    @layer utilities {
+        .text-gradient {
+            @apply bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] bg-clip-text text-transparent;
+        }
+    }
+    </style>
 </head>
 <body>
-  <h1>مرحباً بك في تطبيق شاتنا 💬</h1>
-  <p>تم رفع الموقع بنجاح عبر Vercel 🚀</p>
+    <div id="root"></div>
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/CountryRoom.js"></script>
+    <script type="text/babel" src="components/ChatMessage.js"></script>
+    <script type="text/babel" src="components/RegisterModal.js"></script>
+    <script type="text/babel" src="components/RoomsList.js"></script>
+    <script type="text/babel" src="components/MembershipCard.js"></script>
+    <script type="text/babel" src="components/MembershipPlans.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="app.js"></script>
 </body>
 </html>
